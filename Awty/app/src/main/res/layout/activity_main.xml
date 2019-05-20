@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:padding="15dp"
+              android:layout_height="match_parent">
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tv_msg"
+            android:id="@+id/tv_msg" android:layout_marginTop="50dp"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:inputType="phone"
+            android:hint="@string/tv_phone"
+            android:digits="0123456789"
+            android:ems="10"
+            android:id="@+id/tv_phone"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="@string/tv_interval"
+            android:layout_marginTop="80dp"
+            android:id="@+id/tv_interval"
+            android:ems="10"/>
+    <Button
+            android:text="@string/button"
+            android:layout_marginTop="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_btn"/>
+
+</LinearLayout>

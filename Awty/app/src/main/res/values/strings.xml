@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Awty</string>
+    <string name="button">START</string>
+    <string name="btn_stop">STOP</string>
+    <string name="tv_msg">Enter a Message</string>
+    <string name="tv_phone">Enter phone number...</string>
+    <string name="tv_interval">Enter time in minutes</string>
+</resources>
