@@ -12,7 +12,7 @@
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="25dp"
             android:inputType="phone"
             android:hint="@string/tv_phone"
             android:digits="0123456789"
@@ -23,12 +23,12 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:hint="@string/tv_interval"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="25dp"
             android:id="@+id/tv_interval"
             android:ems="10"/>
     <Button
             android:text="@string/button"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tv_btn"/>
