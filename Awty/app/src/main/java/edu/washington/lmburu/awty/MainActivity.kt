@@ -109,22 +109,18 @@ class MainActivity : AppCompatActivity() {
                 .let { intent ->
                     PendingIntent.getBroadcast(this, 0, intent, 0)
                 }
-            if(tv_btn.text == "START"){
 
+            if(tv_btn.text == "START"){
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
                     != PackageManager.PERMISSION_GRANTED) {
-
                     // Need to request SEND_SMS permission
                     ActivityCompat.requestPermissions(this,
                         arrayOf(Manifest.permission.SEND_SMS),
                         REQUEST_SMS_SEND_PERMISSION)
-
                 } else {
-
                     // Has Permissions, Send away!
                     alarmMgr?.setRepeating(AlarmManager.RTC_WAKEUP, currentTime+ interval, interval, alarmIntent)
                     Toast.makeText(this, "Alarm has been set", Toast.LENGTH_SHORT).show()
-
                 }
 
                 tv_btn.text = "STOP"
@@ -141,7 +137,6 @@ class MainActivity : AppCompatActivity() {
         givenInterval = tv_interval.text.toString().toInt()
         val interval:Long = givenInterval.toLong() * 1000 * 60
         val currentTime = System.currentTimeMillis()
-
         when (requestCode) {
             REQUEST_SMS_SEND_PERMISSION -> {
                 // If request is cancelled, the result arrays are empty.

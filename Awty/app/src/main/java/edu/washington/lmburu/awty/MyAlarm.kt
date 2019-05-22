@@ -25,15 +25,12 @@ class MyAlarm: BroadcastReceiver() {
 
 
     override fun onReceive(context: Context, intent: Intent?) {
-        val givenPhoneNum = intent?.getStringExtra(PHONE_NUM)
-        val givenMsg = intent?.getStringExtra(MSG)
-        Log.i(TAG, "Given phone# is $givenPhoneNum and Given msg is $givenMsg")
-        Toast.makeText(context, "$givenPhoneNum: Are We There Yet?", Toast.LENGTH_SHORT).show()
 
-        val smsManager = SmsManager.getDefault()
-        val number = "$givenPhoneNum"
-        val message = "$givenMsg"
-        smsManager.sendTextMessage(number, null, message, null, null)
+        try{
+            sendSMS(context, intent)
+        } catch ( e: Exception){
+            e.printStackTrace()
+        }
 
             if (intent?.action == "android.intent.action.BOOT_COMPLETED") {
                 // Set the alarm here.
@@ -47,9 +44,21 @@ class MyAlarm: BroadcastReceiver() {
                     storedInterval,
                     pendingIntent
                 )
-            Log.i(TAG, "reboot")
+//            Log.i(TAG, "reboot")
             }
 
+        }
+
+        fun sendSMS(context: Context, intent: Intent?){
+
+            val smsManager = SmsManager.getDefault()
+            val givenPhoneNum = intent?.getStringExtra(PHONE_NUM)
+            val givenMsg = intent?.getStringExtra(MSG)
+            Log.i(TAG, "Given phone# is $givenPhoneNum and Given msg is $givenMsg")
+            Toast.makeText(context, "$givenPhoneNum: Are We There Yet?", Toast.LENGTH_SHORT).show()
+            val number = "$givenPhoneNum"
+            val message = "$givenMsg"
+            smsManager.sendTextMessage(number, null, message, null, null)
         }
 
 }
